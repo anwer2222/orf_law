@@ -14,15 +14,14 @@ const Footer = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.1 }}
-      className="mt-16 xl:mt-32 bg-primary text-primary-foreground pt-16 px-5"
+      className="mt-16 xl:mt-32 bg-primary text-primary-foreground pt-16"
     >
       <div className="container mx-auto">
-        <div className="pb-16 flex flex-col xl:flex-row gap-15 xl:gap-10">
+        <div className="pb-16 flex flex-col xl:flex-row gap-15 xl:gap-10 justify-center items-center">
           {/* Brand & Credentials */}
           <div className="flex-1">
-            <Link href="/" className="flex flex-col mb-6">
-               <h3 className="text-3xl font-bold text-accent tracking-wider">AL-ORF</h3>
-               <span className="text-xs uppercase tracking-[0.2em] text-white/60">Law & Legal Consultation</span>
+          <Link href="/" className="flex mb-6">
+              <Image src="/orf_logo_b.png" width={250} height={68} alt="Golden Touch Interiors" />
             </Link>
             <p className="text-primary-foreground/70 max-w-[300px] mb-6 leading-relaxed">
               Defending rights with integrity. Licensed by the Ministry of Justice and affiliated with the International Court of Dispute Resolution.
@@ -49,12 +48,12 @@ const Footer = () => {
           </div>
 
           {/* Newsletter / Updates */}
-          <div className="flex-1">
-            <h4 className="h4 text-primary-foreground mb-10">Legal Insights</h4>
+          <div className="flex-1 px-5">
+            <h4 className="font-bold text-lg text-primary-foreground mb-3 ">Legal Insights</h4>
             <p className="mb-9 text-primary-foreground/70">
               Subscribe to receive updates on Saudi Law regulations and firm news.
             </p>
-            <div className="relative max-w-[350px]">
+            <div className="relative max-w-87.5">
               <input
                 type="text"
                 placeholder="Enter your email"
@@ -69,7 +68,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="bg-black/20 py-8 border-t border-white/5">
+      <div className="bg-black/20 py-8 border-t border-white/5 px-5">
         <div className="container mx-auto flex flex-col gap-4 text-center xl:text-left">
            <div className="flex flex-col xl:flex-row items-center justify-between gap-6">
               <p className="text-primary-foreground/60 text-sm">

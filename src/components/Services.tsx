@@ -95,14 +95,14 @@ const Services = () => {
   const [activeTab, setActiveTab] = useState("litigation");
 
   return (
-    <section className="pt-16 xl:pt-32 bg-secondary/5 pb-20" id="services">
+    <section className="pt-16 xl:pt-32 bg-secondary/5" id="services">
       <div className="container mx-auto">
         <motion.div
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.2 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-135 mx-auto mb-20"
         >
           <Pretitle text="Our Practice Areas" center />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive Legal Solutions</h2>
@@ -121,23 +121,34 @@ const Services = () => {
           <Tabs
             defaultValue="litigation"
             onValueChange={(value) => setActiveTab(value)}
-            className="flex flex-col xl:flex-row w-full gap-y-8 md:gap-0"
+            className="flex flex-col xl:flex-row w-full gap-y-100 md:gap-0"
           >
-            <TabsList className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 md:gap-0 w-full xl:w-[350px] bg-transparent p-0">
+            <TabsList className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-1 gap-3 md:gap-7.5 md:h-full w-full xl:w-100 rounded-none p-0 bg-transparent">
               {serviceData.map((item) => (
                 <TabsTrigger
                   key={item.name}
                   value={item.name}
-                  className="w-full h-24 flex items-center justify-start px-6 gap-4 bg-background border border-border/50 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground data-[state=active]:border-accent transition-all duration-300"
+                  // Added 'border-b xl:border-b-0' so they have a line between them on mobile since they now touch
+                  className="w-full rounded-none h-25 flex items-center relative shadow-sm bg-card p-0 outline-none border-b border-border/10 last:border-none xl:border-none data-[state=active]:ring-2 ring-accent"
                 >
-                  <item.icon className="text-3xl"/>
-                  <span className="font-semibold text-lg">{item.title}</span>
+                  <div
+                    className={`w-25 h-25 flex items-center justify-center absolute left-0 transition-colors duration-300 ${
+                      activeTab === item.name
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-accent text-accent-foreground"
+                    }`}
+                  >
+                    <item.icon className="size-10"/>
+                  </div>
+                  <div className="uppercase font-primary text-base font-semibold tracking-[.6px] w-full pl-27.5 text-left">
+                    {item.name}
+                  </div>
                 </TabsTrigger>
               ))}
             </TabsList>
 
             {/* Content */}
-            <div className="flex-1 bg-background border border-border/50 p-8 min-h-[500px]">
+            <div className="flex-1 bg-card text-card-foreground shadow-md h-auto xl:h-122.5 p-7.5">
               {serviceData.map((item) => (
                 <TabsContent key={item.name} value={item.name} className="m-0 h-full">
                   <motion.div
@@ -145,27 +156,38 @@ const Services = () => {
                     initial="hidden"
                     whileInView="show"
                     exit="hidden"
-                    className="flex flex-col h-full"
+                    className="flex flex-col md:flex-row gap-7.5 h-full"
                   >
-                    <div className="flex-1">
-                        <h3 className="text-3xl font-bold mb-6 text-foreground">{item.title}</h3>
-                        <p className="mb-8 text-lg text-muted-foreground">{item.description}</p>
-                        
-                        <div className="bg-secondary/10 p-6 rounded-lg mb-8">
-                            <h4 className="font-semibold mb-4 text-accent-foreground">Key Services:</h4>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {item.serviceList.map((service, index) => (
-                                <li key={index} className="flex items-center gap-3">
-                                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                                <span className="text-foreground/80">{service}</span>
-                                </li>
-                            ))}
-                            </ul>
+                    {/* Images */}
+                    <div className="flex md:flex-col gap-5 xl:gap-7.5">
+                      {item.thumbs.map((thumb, index) => (
+                        <div
+                          key={index}
+                          className="relative w-35 xl:w-50 h-35 xl:h-50 overflow-hidden"
+                        >
+                          <Image src={thumb.url} fill alt="" className="object-cover" />
                         </div>
+                      ))}
                     </div>
                     
-                    <div className="mt-auto pt-6 border-t border-border/20">
-                         <Button text="Request Consultation" />
+                    {/* Text & Button */}
+                    <div className="flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="h3 mb-6">{item.title}</h3>
+                        <p className="mb-10 text-muted-foreground">{item.description}</p>
+                        
+                        <ul className="grid grid-cols-2 gap-4 mb-12">
+                          {item.serviceList.map((service, index) => (
+                            <li key={index} className="flex items-center gap-4">
+                              <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                              <div className="capitalize font-medium text-card-foreground">
+                                {service}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <Button text="Learn more" />
                     </div>
                   </motion.div>
                 </TabsContent>

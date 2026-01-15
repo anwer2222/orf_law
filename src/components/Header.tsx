@@ -7,13 +7,7 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4 flex items-center md:justify-between justify-center">
         <Link href="/" className="flex items-center gap-3">
           {/* Replace with Al-Orf Logo if available, using placeholder for now */}
-          <div className="rounded-full bg-accent w-12.5 h-12.5 flex items-center justify-center text-accent-foreground font-bold text-2xl">
-            A
-          </div>
-          <div>
-            <div className="text-lg font-bold text-primary tracking-wide">AL-ORF</div>
-            <div className="text-xs text-muted-foreground uppercase tracking-widest">Law & Legal Consultation</div>
-          </div>
+          <Image className="rounded-full gradient-gold flex items-center justify-center text-primary-foreground font-semibold" src="/orf_logo_h.png" alt="" height={300} width={300}/>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
