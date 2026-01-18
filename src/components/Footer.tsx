@@ -64,7 +64,7 @@ const Footer = () => {
                 placeholder={t.footer.newsletter_placeholder}
                 // Changed 'pl-7' to 'ps-7' (padding-start) so text indent flips correctly
                 // Added 'pe-14' (padding-end) to reserve space for the button so text doesn't overlap it
-                className="bg-background/10 h-16 w-full ps-7 pe-14 text-primary-foreground placeholder:text-white/50 border border-white/10 rounded-none outline-none focus:border-accent transition-all flex justify-center items-center placeholder:text-start"
+                className="bg-background/10 h-16 w-full ps-7 pe-14 text-primary-foreground placeholder:text-accent-foreground border border-white/10 rounded-none outline-none focus:border-accent transition-all flex justify-center items-center placeholder:text-start"
               />
               <button
                 // Use 'end-2' instead of 'right-2/left-2'. 
