@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/../public/assets/variants";
 
 import { useLanguage } from '@/context/LanguageContext';
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 
 const fadeInVariant = {
   hidden: { opacity: 0 },
@@ -47,7 +47,7 @@ const Services = () => {
     ],
   };
 
-  const serviceKeys = ["litigation", "consultation", "corporate", "international"];
+  const serviceKeys:("litigation"| "consultation"| "corporate"| "international")[] = ["litigation", "consultation", "corporate", "international"];
 
   return (
     <section className="pt-16 xl:pt-32 bg-secondary/5" id="services">
