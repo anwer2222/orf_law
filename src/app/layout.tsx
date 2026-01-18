@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Oswald, Cairo } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from '@/context/LanguageContext';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// 2. Configure Oswald (for English)
+const oswald = Oswald({ 
   subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// 3. Configure Cairo (for Arabic)
+const cairo = Cairo({ 
+  subsets: ["arabic"],
+  variable: "--font-cairo",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Al-Orf",
-  description: "Al-Orf organizer law and legal consultation",
+  title: "العُرف",
+  description: "مكتب العُرف للمحاماة والاستشارات",
 };
 
 export default function RootLayout({
@@ -23,11 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
+      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${oswald.variable} ${cairo.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>
+           {children}
+        </LanguageProvider>
       </body>
     </html>
   );

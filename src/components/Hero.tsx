@@ -4,8 +4,10 @@ import Button from "./Button";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/../public/assets/variants";
 import Image from "next/image";
+import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
+  const { t, dir } = useLanguage();
   return (
     <section className="h-[80vh] bg-no-repeat bg-cover bg-center relative">
       <div className="absolute inset-0 w-full h-full z-0">
@@ -20,15 +22,17 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto h-full flex items-center relative z-20">
-        <div className="text-white text-center xl:text-left mx-auto xl:mx-0 flex flex-col items-center xl:items-start max-w-2xl">
+        {/* Added xl:text-start for RTL support instead of text-left */}
+        <div className="text-white text-center xl:text-start mx-auto xl:mx-0 flex flex-col items-center xl:items-start max-w-2xl">
           <motion.h1
-            variants={fadeIn("up", 0.2)}
+            variants={fadeIn(dir === 'rtl' ? "left" : "up", 0.2)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.8 }}
             className="text-4xl md:text-6xl font-bold leading-tight mb-6"
           >
-            <span className="text-accent">Justice</span> Served With <br/> Integrity & Precision
+            {/* <span className="text-primary">Justice</span> Served With <br/> Integrity & Precision */}
+            {t.hero.title}
           </motion.h1>
 
           <motion.p
@@ -38,7 +42,7 @@ const Hero = () => {
             viewport={{ once: false, amount: 0.8 }}
             className="mb-9 text-lg text-white/90 font-light max-w-lg"
           >
-            A premier legal consultancy in Madinah, licensed by the Ministry of Justice and affiliated with the International Court of Dispute Resolution.
+           {t.hero.subtitle}
           </motion.p>
 
           <motion.div
@@ -47,7 +51,7 @@ const Hero = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.8 }}
           >
-            <Button text="Free Consultation" />
+            <Button text={t.hero.cta} dir={dir} />
           </motion.div>
         </div>
       </div>
