@@ -60,7 +60,7 @@ const Content = () => {
                       {t.contact.phone_label}
                     </h5>
                     <p className="mb-1 text-muted-foreground text-sm">{t.contact.phone_sub}</p>
-                    <p className="font-semibold text-primary" dir="ltr">{t.topbar.phone}</p>
+                    <p className="font-semibold text-primary">{t.topbar.phone}</p>
                   </div>
                 </div>
                 

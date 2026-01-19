@@ -29,7 +29,7 @@ const Slider = () => {
                 src={item.avatar}
                 fill
                 className="object-cover rounded-full border-2 border-accent"
-                quality={100}
+                quality={75}
                 alt={item.name}
               />
             </div>

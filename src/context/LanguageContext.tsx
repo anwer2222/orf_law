@@ -167,7 +167,7 @@ const translations: { ar: Translations; en: Translations } = {
       affiliations: "عضويات محلية ودولية",
     },
     services: {
-        pretitle: "مجالات الممارسة",
+        pretitle: "مجالاتنا القانونية",
         title: "حلول قانونية شاملة",
         subtitle: "نجمع بين الخبرة المحلية العميقة في النظام السعودي والمعايير القانونية الدولية.",
         tabs: {
@@ -290,7 +290,7 @@ const translations: { ar: Translations; en: Translations } = {
       about: "ملتزمون بالدفاع عن الحقوق وترسيخ العدالة. مرخصون من وزارة العدل وموثوقون من قبل العملاء في جميع أنحاء المملكة.",
       links_title: "روابط سريعة",
       contact_title: "تواصل معنا",
-      newsletter_title: "أحدث الرؤى",
+      newsletter_title: "أخر ألاحداث",
       newsletter_desc: "اشترك لتصلك آخر المستجدات حول الأنظمة السعودية وأخبار المكتب.",
       newsletter_placeholder: "أدخل بريدك الإلكتروني",
       copyright: "جميع الحقوق محفوظة لمكتب العُرف للمحاماة ٢٠٢٦",

@@ -10,7 +10,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 
 const About = () => {
-  const { t, dir } = useLanguage();
+  const { t, dir, lang } = useLanguage();
 
   return (
     <section className="pt-16 md:pt-32 px-3" id="about">
@@ -26,7 +26,7 @@ const About = () => {
               viewport={{ once: false, amount: 0.2 }}
               className="max-w-135 pl-10"
             >
-              <Pretitle text={t.about.pretitle} />
+              <Pretitle text={t.about.pretitle} lang={lang}/>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               {t.about.title}
               </h2>

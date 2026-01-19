@@ -18,7 +18,7 @@ const fadeInVariant = {
 };
 
 const Services = () => {
-  const { t, dir } = useLanguage();
+  const { t, dir, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState("litigation");
 
   // Mapping icons to keys
@@ -59,7 +59,7 @@ const Services = () => {
           viewport={{ once: false, amount: 0.2 }}
           className="text-center max-w-135 mx-auto mb-20"
         >
-          <Pretitle text={t.services.pretitle} center />
+          <Pretitle text={t.services.pretitle} lang={lang} center />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.services.title}</h2>
           <p className="text-muted-foreground">
           {t.services.subtitle}

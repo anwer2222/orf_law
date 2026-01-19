@@ -9,7 +9,7 @@ import { fadeIn } from "@/../public/assets/variants";
 import { useLanguage } from "@/context/LanguageContext";
 
 const Testimonials = () => {
-  const { t, dir } = useLanguage();
+  const { t, dir, lang } = useLanguage();
   return (
     <section className="pt-16 xl:pt-32 px-5" id="testimonials">
       <div className="container mx-auto">
@@ -23,7 +23,7 @@ const Testimonials = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex-1 max-w-121 xl:pt-13.5 mb-12 xl:mb-0"
           >
-            <Pretitle text={t.testimonials.pretitle} />
+            <Pretitle text={t.testimonials.pretitle} lang={lang} />
             <h2 className="h2 mb-6 text-foreground">{t.testimonials.title}</h2>
             <p className="mb-10 max-w-105 text-muted-foreground">
               {t.testimonials.description}
@@ -66,7 +66,7 @@ const Testimonials = () => {
                   width={54}
                   height={36}
                   alt="quote"
-                  className="drop-shadow-md text-accent"
+                  className="drop-shadow-md text-praimary"
                 />
               </div>
               <Slider />

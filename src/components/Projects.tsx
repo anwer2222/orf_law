@@ -40,7 +40,7 @@ const Projects = () => {
             className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6"
         >
             <div className="max-w-150">
-                <Pretitle text="Case Studies" />
+                <Pretitle text="Case Studies" lang={"en"} />
                 <h2 className="h2 mb-4">Featured Installations</h2>
                 <p className="text-muted-foreground max-w-100">
                     Deep dives into how we solve complex space challenges with our signature golden touch.

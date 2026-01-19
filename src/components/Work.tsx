@@ -45,7 +45,7 @@ const Work = () => {
         viewport={{ once: false, amount: 0.2 }}
         className="text-center max-w-135 mx-auto xl:mb-20"
       >
-        <Pretitle text="Gallery" center />
+        <Pretitle text="Gallery" lang={"en"} center />
         <h2 className="h2 mb-3">Our Craftsmanship</h2>
         <p className="mb-11 max-w-120 mx-auto text-muted-foreground">
           A selection of completed installations — showcasing our precision and attention to detail.

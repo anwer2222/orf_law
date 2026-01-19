@@ -16,7 +16,7 @@ const faqItemVariants = {
 };
 
 const Faq = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section className="pt-16 xl:pt-32 mb-16 xl:mb-32" id="faq">
@@ -29,7 +29,7 @@ const Faq = () => {
           viewport={{ once: false, amount: 0.2 }}
           className="text-center max-w-2xl mx-auto xl:mb-16"
         >
-          <Pretitle text={t.faq.pretitle} center />
+          <Pretitle text={t.faq.pretitle} lang={lang} center />
           <h2 className="h2 mb-4">{t.faq.title}</h2>
           <p className="text-muted-foreground">
             {t.faq.description}
